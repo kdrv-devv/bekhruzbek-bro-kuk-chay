@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy me Kuk Choy</title>
+    <link rel="stylesheet" href="style__purchase.css">
+</head>
+
+<body>
+
+    <div class="loader-container" id="loader">
+        <div class="teapot"></div>
+    </div>
+
+    <div class="temp container " id="content">
+        <div class="choyxona">
+        </div>
+        <div class="left-side">
+            <h2>Buy me <span class="choy">Kuk Choy</span>
+                <img src="images/piala_icon.png" class="piala" alt="Icon">
+            </h2>
+            <div class="amount-buttons">
+                <button class="amount-button selected" data-amount="2">2</button>
+                <button class="amount-button" data-amount="4">4</button>
+                <button class="amount-button" data-amount="6">6</button>
+                <button class="amount-button" data-amount="10">10</button>
+            </div>
+            <input type="text" placeholder="Name or @yoursocial" id="name">
+            <textarea placeholder="Say something nice..." id="message"></textarea>
+        </div>
+        <div class="right-side">
+            <h2>Finalize Payment </h2>
+            <p>Total: $<span id="total-amount">2</span></p>
+            <input type="text" placeholder="Card Number" id="card-number">
+            <div style="display: flex; gap: 10px;">
+                <input type="text" placeholder="MM/YY" style="width: 50%;">
+                <input type="text" placeholder="CVV" style="width: 50%;">
+            </div>
+            <button class="support-button">Support $<span id="button-amount">1</span></button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const amountButtons = document.querySelectorAll('.amount-button');
+            const totalAmount = document.getElementById('total-amount');
+            const buttonAmount = document.getElementById('button-amount');
+
+            amountButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    amountButtons.forEach(btn => btn.classList.remove('selected'));
+                    this.classList.add('selected');
+                    const amount = this.getAttribute('data-amount');
+                    totalAmount.textContent = amount;
+                    buttonAmount.textContent = amount;
+                });
+            });
+        });
+
+
+        window.addEventListener("load", function () {
+            setTimeout(function () {
+                document.getElementById("loader").style.display = "none";
+                const content = document.getElementById("content");
+                content.style.display = "flex"; 
+                setTimeout(() => {
+                    content.style.opacity = "1"; 
+                    let temp = document.querySelector(".temp");
+                    temp.classList.remove();
+                }, 10);
+            }, 4010); 
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>
