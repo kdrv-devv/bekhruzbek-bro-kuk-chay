@@ -2,11 +2,27 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    /* background-image: url("images/barg.jpg"); */
+    background-image: url("images/barg.jpg");
     background-size: cover;
     background-repeat: repeat;
-    background-color: #f6f6f6;
+    /* background-color: #f6f6f6; */
     background-position: center;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 750px;
+    background-color: rgba(0, 0, 0, 0); /* No darkening in normal mode */
+    z-index: -1; /* Make sure it stays behind the content */
+}
+
+/* Dark mode */
+body.dark-mode::before {
+    background-color: rgba(0, 0, 0, 0.7); /* 50% dark overlay in dark mode */
 }
 
 /* Avatar Container */
@@ -74,6 +90,7 @@ body {
 
 /* Main Content Flex Layout */
 .main-content {
+    z-index: 99;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -90,11 +107,21 @@ h1 {
     color: #262456;
 }
 
+.text-shadow{
+    color: #fff;
+
+}
+
 .subtitle {
     font-size: 18px;
     color: #666;
     margin-bottom: 40px;
 }
+
+.dark-subtitle{
+    color: #c1c0c0;
+}
+
 
 /* Left and Right Div Layout */
 .left {
