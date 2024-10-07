@@ -40,6 +40,11 @@ body.dark-mode::before {
     box-shadow: 0px 0px 16px rgba(144, 238, 144, 0.5);
 }
 
+.dark-avatar{
+    box-shadow: 0px 0px 16px rgba(255, 255, 255, 0.2);
+}
+
+
 /* Piala */
 .piala {
     vertical-align: bottom;
@@ -64,6 +69,7 @@ body.dark-mode::before {
 /* Primary Button */
 .btn-primary {
     background-color: #fdec01;
+   
     color: #262456;
     border-radius: 16px;
     border: none;
@@ -88,6 +94,16 @@ body.dark-mode::before {
 }
 
 
+.dark-btn{
+
+    box-shadow: 0px 0px 16px  rgba(0, 0, 0, 0.2);
+    background-color: #f2d600;
+    &:hover{
+        box-shadow: 0px 0px 16px  rgba(0, 0, 0, 0.2);
+    }
+}
+
+
 /* Main Content Flex Layout */
 .main-content {
     z-index: 99;
@@ -108,8 +124,7 @@ h1 {
 }
 
 .text-shadow{
-    color: #fff;
-
+    color: #8989c4;
 }
 
 .subtitle {
@@ -119,7 +134,7 @@ h1 {
 }
 
 .dark-subtitle{
-    color: #c1c0c0;
+    color: #E7E9E9;
 }
 
 
@@ -762,8 +777,19 @@ h1 {
 
 
 
-
 /* night day button */
 
 
 /* From Uiverse.io by Galahhad */ 
+
+
+
+/* musiqa */
+
+
+.tea-sound{
+    /* visibility: hidden; */
+    width: 1px;
+    height: 1px;
+    /* display: none; */
+}
